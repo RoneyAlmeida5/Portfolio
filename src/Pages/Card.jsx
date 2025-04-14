@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Card({ imageUrl, title, description }) {
+function Card({ src, title, description }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -9,9 +9,9 @@ function Card({ imageUrl, title, description }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img src={imageUrl} alt={title} className="w-68 h-50 object-cover" />
+      <img src={src} alt={title} className="w-68 h-50 object-cover" />
       {isHovered && (
-        <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-gray-800 flex flex-col justify-center items-center opacity-gradient-to-top">
+        <div className="absolute top-0 left-0 w-full h-full opacity-70 bg-gray-800 flex flex-col justify-center items-center opacity-gradient-to-top">
           <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
           <p className="text-sm text-gray-400">{description}</p>
         </div>

@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import perfil from "../assets/perfil.png";
 
 function Home() {
+  const [activeButton, setActiveButton] = useState(null);
+  const [activeSection, setActiveSection] = useState("");
+
+  const handleButtonClick = (sectionId) => {
+    setActiveButton(sectionId);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => {
+        AOS.refresh();
+      }, 500);
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      setActiveSection(current);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // pra detectar já no carregamento
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="bg-gray-800 text-white flex flex-col md:grid md:grid-cols-2 min-h-screen">
       {/* PAGE LEFT */}
@@ -15,9 +49,12 @@ function Home() {
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             Hello, I am Roney Almeida
           </h1>
-          <p className="mb-4 text-sm sm:text-base md:text-lg">
-            I'm a full-stack developer passionate about crafting efficient and
-            elegant solutions with React and Node.js.
+
+          <p className="mb-4 text-sm text-gray-400 sm:text-base md:text-lg">
+            A Full Stack developer at the beginning of my career who is
+            passionate about technology. I am looking for my first opportunity
+            in the market to put into practice the skills I have been
+            developing.
           </p>
 
           <div className="flex justify-center md:justify-start space-x-6 mb-4">
@@ -28,7 +65,7 @@ function Home() {
               aria-label="GitHub"
               className="text-xl"
             >
-              <span class="[&>svg]:h-5 [&>svg]:w-5">
+              <span class="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -45,7 +82,7 @@ function Home() {
               aria-label="Linkedin"
               className="text-xl"
             >
-              <span class="[&>svg]:h-5 [&>svg]:w-5">
+              <span class="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -56,8 +93,14 @@ function Home() {
               </span>
             </a>
           </div>
-          <button className="bg-slate-600 hover:bg-slate-800 py-2 px-4 rounded">
-            Download CV
+          <button
+            className={`cursor-pointer bg-slate-600 bg-neutral-950 text-neutral-400 border border-neutral-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group${
+              activeSection === "contact" ? "active" : ""
+            }`}
+            onClick={() => handleButtonClick("contact")}
+          >
+            <span className="bg-gray-400 shadow-gray-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
+            Contact
           </button>
         </div>
       </div>

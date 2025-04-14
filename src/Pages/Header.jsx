@@ -40,7 +40,7 @@ function Header() {
 
   return (
     <header className="bg-gray-900 text-white p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center fixed top-0 w-full z-10">
-      <div className="font-bold text-xl mb-4 sm:mb-0 text-center sm:text-left">
+      <div className="font-bold text-gray-400 text-xl mb-4 sm:mb-0 text-center sm:text-left">
         Portfolio
       </div>
       <nav className="w-full sm:w-auto">
@@ -82,7 +82,7 @@ function Header() {
               }`}
               onClick={() => handleButtonClick("port")}
             >
-              Portfolio
+              Projects
             </button>
           </li>
           <li>

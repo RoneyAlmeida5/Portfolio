@@ -38,5 +38,5 @@ button.active::after {
 }
 
 .opacity-gradient-to-top {
-  background-image: linear-gradient(to top, rgb(116, 116, 116), rgb(0, 0, 0));
+  background-image: linear-gradient(to top, rgb(49, 46, 69), rgb(0, 0, 0));
 }

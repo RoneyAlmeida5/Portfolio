@@ -1,17 +1,23 @@
 import React, { useState } from "react";
 import Card from "./Card";
+// IMAGE
+import OnPoint from "../assets/OnPoint.jpeg";
+import DevBlog from "../assets/DevBlog.png";
+import Portfolio from "../assets/Portfolio.jpeg";
+import Copa from "../assets/Copa.png";
+import Banco from "../assets/bd.png";
 
 function Port() {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
       <h2 className="text-3xl font-bold text-white mb-8" data-aos="fade-down">
-        Latest <span className="text-gray-600">Project</span>
+        Latest <span className="text-gray-600">Projects</span>
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* PROJETO 1 */}
         <a
-          href="https://github.com/RoneyAlmeida5"
+          href="https://github.com/RoneyAlmeida5/OnPoint"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl"
@@ -19,15 +25,14 @@ function Port() {
           data-aos-offset="200"
         >
           <Card
-            imageUrl="https://i.pinimg.com/originals/9e/86/ac/9e86ac95218707bedeae3ac54b9f4bc8.jpg"
-            title="Projeto 1"
-            description="Descrição do Projeto 1."
-            href="https://github.com/RoneyAlmeida5"
+            src={OnPoint}
+            title="OnPoint (PDV)"
+            description="Sales of general merchandise"
           />
         </a>
         {/* PROJETO 2 */}
         <a
-          href="https://github.com/RoneyAlmeida5"
+          href="https://github.com/RoneyAlmeida5/OnPoint_Back"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl"
@@ -35,14 +40,14 @@ function Port() {
           data-aos-offset="200"
         >
           <Card
-            imageUrl="https://i.pinimg.com/236x/1c/1b/52/1c1b52d43e2a3333514c8c88106bc98e.jpg"
-            title="Projeto 2"
-            description="Descrição do Projeto 2."
+            src={Banco}
+            title="Database OnPoint"
+            description="Database using MySQL and Nestjs"
           />
         </a>
         {/* PROJETO 3 */}
         <a
-          href="https://github.com/RoneyAlmeida5"
+          href="https://github.com/RoneyAlmeida5/portfolio"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl"
@@ -50,14 +55,14 @@ function Port() {
           data-aos-offset="200"
         >
           <Card
-            imageUrl="https://i.pinimg.com/236x/de/d2/d0/ded2d08c6aff0a9a3e900f1ce11f2ad3.jpg"
-            title="Projeto 3"
-            description="Descrição do Projeto 3."
+            src={Portfolio}
+            title="Professional Portfolio"
+            description="Development career"
           />
         </a>
         {/* PROJETO 4 */}
         <a
-          href="https://github.com/RoneyAlmeida5"
+          href="https://github.com/RoneyAlmeida5/DevBlog"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl"
@@ -65,14 +70,14 @@ function Port() {
           data-aos-offset="200"
         >
           <Card
-            imageUrl="https://prodaly.com.br/wp-content/uploads/2024/01/blog-setembro-2-1.jpg"
-            title="Projeto 4"
-            description="Descrição do Projeto 4."
+            src={DevBlog}
+            title="DevBlog Personal"
+            description="Blog to photo post using Firebase as DB"
           />
         </a>
         {/* PROJETO 5 */}
         <a
-          href="https://github.com/RoneyAlmeida5"
+          href="https://github.com/RoneyAlmeida5/nlw-10-copa"
           target="_blank"
           rel="noopener noreferrer"
           className="text-xl"
@@ -80,24 +85,9 @@ function Port() {
           data-aos-offset="200"
         >
           <Card
-            imageUrl="https://www.serasaexperian.com.br/images-cms/wp-content/uploads/2023/08/Profissao-Programador-1.jpg"
-            title="Projeto 5"
-            description="Descrição do Projeto 5."
-          />
-        </a>
-        {/* PROJETO 6 */}
-        <a
-          href="https://github.com/RoneyAlmeida5"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xl"
-          data-aos="fade-left"
-          data-aos-offset="200"
-        >
-          <Card
-            imageUrl="https://classic.exame.com/wp-content/uploads/2017/05/programador-senior-monsitj.jpg?quality=70&strip=info&w=1024"
-            title="Projeto 6"
-            description="Descrição do Projeto 6."
+            src={Copa}
+            title="Cup Games"
+            description="Qatar World Cup Schedule and Matches"
           />
         </a>
       </div>
