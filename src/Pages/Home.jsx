@@ -39,11 +39,13 @@ function Home() {
   }, []);
 
   return (
-    <div className="bg-gray-800 text-white flex flex-col md:grid md:grid-cols-2 min-h-screen">
+    <div className="bg-gray-900 text-white mt-25 mb-10 flex flex-col min-h-screen md:grid md:grid-cols-2">
+      {" "}
+      {/* Always flex-col on mobile */}
       {/* PAGE LEFT */}
-      <div className="bg-gray-900 text-white p-6 flex items-center justify-center">
+      <div className="bg-gray-900 text-white p-6 flex items-center justify-center w-full">
         <div
-          className="max-w-md text-center md:text-left"
+          className="max-w-md text-center md:text-left w-full"
           data-aos="fade-right"
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
@@ -65,7 +67,7 @@ function Home() {
               aria-label="GitHub"
               className="text-xl"
             >
-              <span class="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
+              <span className="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -82,7 +84,7 @@ function Home() {
               aria-label="Linkedin"
               className="text-xl"
             >
-              <span class="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
+              <span className="[&>svg]:h-5 [&>svg]:w-5 p-2 border border-gray-700 rounded-full inline-flex items-center justify-center transition-colors duration-500 hover:bg-white hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -105,12 +107,14 @@ function Home() {
         </div>
       </div>
       {/*PAGE RIGHT*/}
-      <div className="flex items-center justify-center bg-gradient-to-r from-gray-900 via-slate-600 to-gray-900 h-full w-full">
-        <div class="absolute w-1/2 bg-gray-600 clip-angled h-full"></div>
+      <div className="flex items-center justify-center bg-gradient-to-r from-gray-900 via-slate-600 to-gray-900 h-full w-full md:block">
+        {/* Conditionally render or hide the angled background on mobile */}
+        <div className="absolute w-1/2 bg-gray-600 clip-angled h-full md:block hidden"></div>
         <img
           data-aos="fade-left"
           src={perfil}
-          className="max-w-xs md:max-w-sm lg:max-w-md w-full mt-10 mr-40 rounded-full object-cover absolute"
+          className="max-w-xs md:max-w-sm lg:max-w-md w-full mt-6 md:mt-10 md:mr-40 rounded-full object-cover md:relative"
+          alt="Perfil"
         />
       </div>
     </div>

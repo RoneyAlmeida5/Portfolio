@@ -23,8 +23,8 @@ function App() {
   return (
     <BrowserRouter basename="/portfolio">
       <div>
+        <Header />
         <div>
-          <Header />
           <section id="home">
             <Home />
           </section>

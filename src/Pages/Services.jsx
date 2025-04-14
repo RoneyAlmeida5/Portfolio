@@ -2,7 +2,7 @@ import React from "react";
 
 function Services() {
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center px-4 mt-20">
       <h2 className="text-3xl font-bold text-white mb-8" data-aos="fade-down">
         My <span className="text-gray-600">Services</span>
       </h2>
